@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+qdrant-client
+pydub
+librosa
+compiam
+soundfile
+pyyaml
+numpy
+# The 'mule' library from 'music-audio-representations' is assumed to be installed.
+# Essentia and its models are also assumed to be installed. 

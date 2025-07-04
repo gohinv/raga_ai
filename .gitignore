@@ -7,3 +7,5 @@ mule_embed_test/
 *.ipynb
 venv/
 .DS_Store
+qdrant_storage/
+profile.stats
