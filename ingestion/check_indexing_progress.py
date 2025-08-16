@@ -27,7 +27,6 @@ def check_indexing_status():
                 print("Indexing may have encountered an error.")
                 break
             
-            # Format the progress nicely
             progress_percent = (indexed_points / total_points) * 100 if total_points > 0 else 100
             
             print(

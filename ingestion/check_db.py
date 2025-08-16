@@ -9,7 +9,7 @@ def check_database_status():
     try:
         client = QdrantClient(url=QDRANT_URL)
         
-        # Check if the collection exists
+        # Check if collection exists
         try:
             collection_info = client.get_collection(collection_name=COLLECTION_NAME)
             print(f"Successfully connected to Qdrant and found collection '{COLLECTION_NAME}'.")

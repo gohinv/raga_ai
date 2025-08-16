@@ -19,12 +19,12 @@ ipd.Audio(audio_path)
 tonic_identifier = TonicIndianMultiPitch()
 audio = audio.set_channels(1)
 
-#1. bandpass filter
+# bandpass filter
 audio = effects.normalize(audio).high_pass_filter(70).low_pass_filter(4000)
 y = np.array(audio.get_array_of_samples(), dtype=np.float32)
 sr = audio.frame_rate
 
-#2. trim silence
+# trim silence
 y, _ = librosa.effects.trim(y, top_db=30)
 
 # detect tonic and shift
@@ -35,7 +35,7 @@ target_tonic_hz = 130.813 # C3
 
 n_steps = 12 * np.log2(target_tonic_hz / tonic_1)
 
-# Create a pitch-shifted version of the audio
+# pitch-shifted version of the audio
 y_shifted = librosa.effects.pitch_shift(y, sr=sr, n_steps=n_steps)
 
 # DATA AUGMENTATION

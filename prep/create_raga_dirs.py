@@ -19,17 +19,15 @@ parent_dir = "./top30raga_data"
 os.makedirs(parent_dir, exist_ok=True)
 
 for raga in raga_names:
-    # Convert to lowercase ASCII characters
-    # First, normalize Unicode characters (NFKD form) and encode as ASCII (ignoring non-ASCII)
     ascii_raga = unicodedata.normalize('NFKD', raga).encode('ASCII', 'ignore').decode('ASCII')
     
-    # Remove any non-alphanumeric characters (keeps only letters and numbers)
+    # remove any non-alphanumeric characters (keeps only letters and numbers)
     ascii_raga = re.sub(r'[^a-zA-Z0-9]', '', ascii_raga)
     
-    # Convert to lowercase
+    # convert to lowercase
     ascii_raga = ascii_raga.lower()
     
-    # Create the directory
+    # create directory
     dir_path = os.path.join(parent_dir, ascii_raga)
     os.makedirs(dir_path, exist_ok=True)
     print(f"Created directory: {dir_path}")
